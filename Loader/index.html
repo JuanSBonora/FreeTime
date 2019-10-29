@@ -10,7 +10,9 @@
 <body>
     
     <div id="progress"></div>
-    <div id="gallery"></div>
+    <div id="gallery">
+
+    </div>
 
     <script src="https://code.createjs.com/1.0.0/preloadjs.min.js"></script>
 
@@ -21,7 +23,8 @@
 
     var queue = new createjs.LoadQueue(false);
 
-    queue.on("progress", event => {
+    queue.on("fileload", handleFileComplete);
+    queue.on('progress', event => {
         console.log(event);
         let progress = Math.floor(event.progress * 100);
         this.progress.style.width = progress+'%';
@@ -29,16 +32,28 @@
             console.log('all done');
             document.querySelector('body').style.background = 'white';
         }
-    })
+    });
+
+    queue.on('complete', event => {
+        gallery.classList.add('fadeIn');
+        setTimeout(() => {
+            gallery.classList.add('expand');
+        },500)
+    });
 
     queue.on("fileload", handleFileComplete);
-    queue.loadFile('img/font.jpg');
-    queue.loadFile('img/foxy.jpg');
     queue.loadFile('img/geko.jpg');
-    queue.loadFile('img/font.jpg');
+    queue.loadFile('img/geko.jpg');
+    queue.loadFile('img/geko.jpg');
+    queue.loadFile('img/geko.jpg');
 
     function handleFileComplete(event) {
+        var item = event.item;
+        var type = item.type;
 
+        if (type == createjs.Types.IMAGE) {
+            gallery.appendChild(event.result);
+        }
     }
 
     </script>
