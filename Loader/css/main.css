@@ -1,0 +1,8 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: #1d1d1d;
+  -webkit-transition: background-color 2s ease;
+  transition: background-color 2s ease;
+}
+/*# sourceMappingURL=main.css.map */

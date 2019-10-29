@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    
+    <div id="progress"></div>
+    <div id="gallery"></div>
+
+    <script src="https://code.createjs.com/1.0.0/preloadjs.min.js"></script>
+
+    <script>
+    
+    let progress = document.getElementById('progress');
+    let gallery = document.getElementById('gallery');
+
+    var queue = new createjs.LoadQueue(false);
+
+    queue.on("progress", event => {
+        console.log(event);
+        let progress = Math.floor(event.progress * 100);
+        this.progress.style.width = progress+'%';
+        if (progress == 100) {
+            console.log('all done');
+            document.querySelector('body').style.background = 'white';
+        }
+    })
+
+    queue.on("fileload", handleFileComplete);
+    queue.loadFile('img/font.jpg');
+    queue.loadFile('img/foxy.jpg');
+    queue.loadFile('img/geko.jpg');
+    queue.loadFile('img/font.jpg');
+
+    function handleFileComplete(event) {
+
+    }
+
+    </script>
+</body>
+</html>
