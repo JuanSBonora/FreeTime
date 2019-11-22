@@ -1,0 +1,48 @@
+=begin
+  Alumno: Juan Francisco Santiago Bonora        Matricula: 1889331
+   Materia: Lenguajes de Programacion            Maestro: Ing. Ismael Gutiérrez Pimentel
+   Hora: N2
+
+   Elabore un programa que atreves de un menu de opciones permita al usuario convertir de pesos a los siguientes monedas:
+   1.- Dolar
+   2.- Euro
+   3.- Yen(Japones)
+   4.- Dolar de Hong Kong
+=end
+
+print "Escoge la divisa a la que quieres convertir  \n 1.-Dolar \n 2.-Euro \n 3.-Yeen \n 4.-DolarHK \n"
+x = gets.to_i
+dol=19.85;
+euro=22.71;
+yen=5.72;
+hk=2.54;
+
+case x
+when 1
+  print "Cuantos pesos deseas convertir?"
+  x = gets.to_i
+  pesos= (x/dol);
+  print "#{x} pesos equivalen a = #{pesos} Dolar"
+
+
+when 2
+  print "Cuantos pesos deseas convertir?"
+  x = gets.to_i
+  pesos= (x/euro);
+  print "#{x} pesos equivalen a = #{pesos} Euro"
+when 3
+  print "Cuantos pesos deseas convertir?"
+  x = gets.to_i
+  pesos= (x*yen);
+  print "#{x} pesos equivalen a = #{pesos} Yen"
+
+
+when 5
+  print "Cuantos pesos deseas convertir?"
+  x = gets.to_i
+  pesos= (x/hk)
+  print "#{x} pesos equivalen a = #{pesos}DolarHK"
+else
+  print "Escoge una opcion valida"
+
+end

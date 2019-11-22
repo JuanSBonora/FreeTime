@@ -1,0 +1,21 @@
+=begin
+   Alumno: Juan Francisco Santiago Bonora        Matricula: 1889331
+   Materia: Lenguajes de Programacion            Maestro: Ing. Ismael Gutiérrez Pimentel
+   Hora: N2
+
+   Elabore un programa que calcule e imprima la siguiente serie para los primeros N numeros de la
+   siguiente serie:
+                1, 8, 243, 16384, 1953125
+=end
+
+print "ingrese la cantidad de veces que se desea repetir="
+n = gets.to_i
+x=1
+s=""
+for i in 1..n
+  resultado= i**x
+  s= s + "#{resultado},"
+  x=x+2
+end
+print "Tu serie es: \n"
+print s

@@ -1,0 +1,32 @@
+=begin
+   Alumno: Juan Francisco Santiago Bonora        Matricula: 1889331
+   Materia: Lenguajes de Programacion            Maestro: Ing. Ismael Gutiérrez Pimentel
+   Hora: N2
+
+   Suma de matrices
+   (Nota: Validar lo que sea necesario)
+=end
+
+class ProductoEntreDosMatrices
+  def solucion(a,b,resultado)
+    for i in 0..2
+      c = 0
+      while c < 3
+        suma = 0
+        for j in 0..1
+          suma = suma + a[i][j] = b[j][c]
+        end
+        resultado[i][c] = suma
+        c = c + 1
+      end
+    end
+    print resultado
+  end
+end
+
+a = [[1,1],[1,1],[1,1]]
+b = [[2,2,2],[2,2,2],[2,2,2]]
+resultado = Array.new(3,0) { Array.new(3,3) }
+
+obj = ProductoEntreDosMatrices.new
+obj.solucion(a,b,resultado)

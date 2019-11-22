@@ -1,0 +1,39 @@
+=begin
+   Alumno: Juan Francisco Santiago Bonora        Matricula: 1889331
+   Materia: Lenguajes de Programacion            Maestro: Ing. Ismael Gutiérrez Pimentel
+   Hora: N2
+
+   Elabore un programa que realice la busqueda de un numero un vector, y muestre un mensaje indicando
+   cuantas veces aparecio dicho vector. Ademas de imprimir dicho vector.
+
+   Ejemplo:
+            valor a buscar : 4
+            "El numero aparece 2 veces en el vector: "
+            {1, 4, 7, 9, 21, 4, 0, 2, 5, 2};
+=end
+
+class BusquedaSecuencial
+  def solucion(vec)
+    i = 1
+    encontro = false
+
+    print "Favor ingresar un numero: "
+    numero = gets.chomp.to_i
+
+    while !encontro && i < 11
+      if numero == vec[i]
+          encontro = true
+            pos = i
+      end
+      i = i + 1
+    end
+    if encontro
+        print "El dato se encuentra y esta en la posicion: ", pos +1
+    end
+  end
+end
+
+vec = [1, 4, 7, 9, 21, 4, 0, 2, 5, 2]
+
+obj = BusquedaSecuencial.new
+obj.solucion(vec)
