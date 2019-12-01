@@ -10,7 +10,7 @@
 * Loader
   - css/
   - img/
-  -index.html
+  - index.html
 * Menu
   - index.html
   - style.css
